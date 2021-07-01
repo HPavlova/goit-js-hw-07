@@ -12,3 +12,19 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryEl = document.querySelector('ul');
+galleryEl.style.display = 'flex';
+galleryEl.style.flexDirection = 'column';
+galleryEl.style.padding = '20';
+
+const elements = option => {
+  const { url, alt } = option;
+  return `<li><img class="gallery__img" src="${url}" alt="${alt}" width="100"></li>`;
+};
+
+const itemEl = images.map(elements).join(' ');
+
+galleryEl.insertAdjacentHTML('afterbegin', itemEl);
+
+console.log(galleryEl);

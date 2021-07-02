@@ -8,13 +8,22 @@ console.log('В списке', categoriesEl.length, 'категории.');
 const titleCategoriesEl = document.querySelectorAll('.item h2');
 // console.log(titleCategoriesEl);
 
-for (let index = 0; index < titleCategoriesEl.length; index++) {
-  const element = titleCategoriesEl[index];
+// for (let index = 0; index < titleCategoriesEl.length; index++) {
+//   const element = titleCategoriesEl[index];
 
+//   console.log(
+//     'Категория:',
+//     element.textContent,
+//     'Количество элементов:',
+//     element.nextElementSibling.children.length,
+//   );
+// }
+
+titleCategoriesEl.forEach(element => {
   console.log(
     'Категория:',
     element.textContent,
     'Количество элементов:',
     element.nextElementSibling.children.length,
   );
-}
+});

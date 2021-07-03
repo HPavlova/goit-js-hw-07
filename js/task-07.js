@@ -5,7 +5,7 @@ const refs = {
 
 console.log(refs.span);
 
-refs.input.addEventListener('change', onInputChange);
+refs.input.addEventListener('input', onInputChange);
 
 function onInputChange(event) {
   console.log('change event');

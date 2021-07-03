@@ -1,5 +1,4 @@
 const input = document.querySelector('#validation-input');
-
 const inputLength = input.getAttribute('data-length');
 
 input.addEventListener('focus', onInputFocus);
@@ -9,11 +8,13 @@ function onInputFocus() {
   console.log('focus event');
 }
 
-function onInputBlur() {
+function onInputBlur(event) {
   console.log('blur event');
 
-  if (input.value.length === inputLength) {
-    input.classList.add('valid');
+  if (event.currentTarget.value.length == inputLength) {
+    input.classList.remove('invalid');
+    return input.classList.add('valid');
   }
-  input.classList.add('invalid');
+  input.classList.remove('valid');
+  return input.classList.add('invalid');
 }
